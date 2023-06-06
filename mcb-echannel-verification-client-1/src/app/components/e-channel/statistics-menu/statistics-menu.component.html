@@ -1,0 +1,46 @@
+<div class="container">
+   
+    <table id="statistics">
+    <thead>
+        <th>Label</th>
+        <th>Count</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td> Not yet called </td>
+            <td>
+                <ng-template [ngIf]="statistics.proceed !== undefined && statistics.proceed !== null" [ngIfElse]="elseBlock">
+                    {{statistics.proceed}}
+                  </ng-template>
+                  <ng-template #elseBlock>
+                   0
+                  </ng-template>
+            </td>
+        </tr>
+        <tr>
+            <td> Call back successful </td>
+            <td>
+                <ng-template [ngIf]="statistics.unassigned !== undefined && statistics.unassigned !== null" [ngIfElse]="elseBlock">
+                    {{statistics.unassigned}}
+                  </ng-template>
+                  <ng-template #elseBlock>
+                   0
+                  </ng-template>
+            </td>
+        </tr>
+        <tr>
+            <td> Call back not successful </td>
+            <td>
+                <ng-template [ngIf]="statistics.Reject !== undefined && statistics.Reject !== null" [ngIfElse]="elseBlock">
+                    {{statistics.Reject}}
+                  </ng-template>
+                  <ng-template #elseBlock>
+                   0
+                  </ng-template>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+

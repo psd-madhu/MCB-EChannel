@@ -1,0 +1,33 @@
+fieldset {
+    border: solid 1px #DDD !important;
+    padding: 0 10px 30px 10px;
+    border-bottom: none;
+}
+
+legend {
+    width: auto !important;
+    border: none;
+    font-size: 14px;
+}
+
+
+div.container {
+    width: 70%;
+}
+
+.form-group {
+    padding : 0px 10px 30px 10px;
+}
+
+textarea{
+    height: 50px;
+    width: 400px;
+}
+
+div.inline {
+    float:left;
+}
+
+.btn {
+    margin-right: 30px
+}

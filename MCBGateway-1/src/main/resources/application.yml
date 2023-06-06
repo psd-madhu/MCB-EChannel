@@ -1,0 +1,36 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: echannel-verification-service
+          uri: lb://ECHANNEL-VERIFICATION-SERVICE
+          predicates:
+            - Path=/echannel/**
+          filters:
+          - AuthenticationFilter
+
+        - id: authentication-service
+          uri: lb://AUTHENTICATION-SERVICE
+          predicates:
+            - Path=/auth/**
+          
+            
+        - id: registration-service
+          uri: lb://REGISTRATION-SERVICE
+          predicates:
+            - Path=/user/**
+          
+ 
+
+  application:
+    name: ECHANNEL-GATEWAY
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+      
+server:
+  port: 8086

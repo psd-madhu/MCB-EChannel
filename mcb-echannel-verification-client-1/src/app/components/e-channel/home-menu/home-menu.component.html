@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="panel-header">
+        <div class="btn-toolbar">
+           
+            <button class="btn btn-primary" type="submit"  (click)="open()" >Open</button>
+            <button class="btn btn-primary" type="submit" (click)="view()">View Only</button>
+            <!-- <button type="submit" >Reject</button> -->
+        </div>
+    </div>
+<table id="example" >
+    <thead>
+        <tr>
+            <th><input type="checkbox" ></th>
+            <th>Created Time</th>
+            <th>Priority</th>
+            <th>Source BU</th>
+            <th>Reference</th>
+            <th>DCP Reference</th>
+            <th>Account Name</th>
+            <th>Trans. Ccy</th>
+            <th>Trans. Amt</th>
+            <th>Locked By</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let event of events" >
+            <!-- <a routerLink="verification/"+{{event.businessKey}}> -->
+            <td><input type="checkbox" ></td>
+            <td [routerLink]="['/verification/', event.businessKey]">{{event.createdOn}}</td>
+            <td [routerLink]="['/verification/', event.businessKey]">{{event.priority}}</td>
+            <td [routerLink]="['/verification/', event.businessKey]">{{event.sourceBU}}</td>
+            <td [routerLink]="['/verification/', event.businessKey]">{{event.businessKey}}</td>
+            <td [routerLink]="['/verification/', event.businessKey]">{{event.dcpReference}}</td>
+            <td [routerLink]="['/verification/', event.businessKey]">{{event.accountName}}</td>
+            <td [routerLink]="['/verification/', event.businessKey]">{{event.transactionCurrency}}</td>
+            <td [routerLink]="['/verification/', event.businessKey]">{{event.transactionAmount}}</td>
+            <td [routerLink]="['/verification/', event.businessKey]">{{event.lockedBy}}</td>
+        <!-- </a> -->
+        <div>
+       
+           
+    </div>
+        </tr>
+    </tbody>
+    
+</table>
+</div>
+    
+
+

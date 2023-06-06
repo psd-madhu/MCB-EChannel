@@ -1,0 +1,196 @@
+
+<div class="container">
+    <div class="row">
+        <div class="panel-header">
+            <div class="btn-toolbar">
+               
+                <button class="btn btn-primary" type="submit"  (click)="submitForProceed()" >Proceed</button>
+                <button class="btn btn-primary" type="submit" (click)="submitForReject()">Reject</button>
+                <!-- <button type="submit" >Reject</button> -->
+            </div>
+        </div>
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>EChannel Verification</h3>
+                </div>
+               
+                <div class="card-body">
+                    <form [formGroup]="verificationForm" >
+
+                       
+
+                        <div class="form-group"> 
+                        <fieldset class="fieldset-border">
+                            <legend class="legend-border">Document </legend>
+                                        <div class="form-group"> 
+                                            <label for="Name"><span class="req">* </span> Reference: </label>
+                                            <input required type="text"  formControlName="businessKey" name="businessKey" id="name" [attr.disabled]="true"/>
+                                        </div>
+                            </fieldset>
+                        </div>  
+                        
+                        <div class="form-group"> 
+                            <fieldset class="fieldset-border">
+                                <legend class="legend-border inline">Transfer Details  </legend>
+                                            <div class="form-group"> 
+                                                <label for="TransactionCurrency"><span class="req">* </span> Currecy </label>
+                                                <select formControlName="transactionCurrency" name="transactionCurrency" id="transactionCurrency">
+                                                    <option value="0" default></option>
+                                                    <option value="1">USD</option>
+                                                    <option value="2">GBP</option>
+                                                    <option value="3">AED</option>
+                                                    <option value="4">MVR</option>
+                                                  </select>
+                                                
+                                            </div>
+
+                                            <div class="form-group"> 
+                                                <label for="TransactionAmount"><span class="req">* </span> Amount </label>
+                                                <input required type="text"  formControlName="transactionAmount" name="transactionAmount" id="transactionAmount" [attr.disabled]="true" />
+                                            </div>
+                                </fieldset>
+                            </div>  
+
+
+                            <div class="form-group"> 
+                                <fieldset class="fieldset-border">
+                                    <legend class="legend-border inline">Debit Account Details  </legend>
+                                                <div class="form-group"> 
+                                                    <label for=""><span class="req">* </span> Account No </label>
+                                                    <input required type="number"  formControlName="debitAccountNumber" name="debitAccountNumber" id="debitAccountNumber"
+                                                         maxlength="12" [attr.disabled]="true" />
+                                                </div>
+    
+                                                <div class="form-group"> 
+                                                    <label for="AccountName"><span class="req">* </span> Name </label>
+                                                    <input required type="text"  formControlName="accountName" name="accountName" id="accountName" [attr.disabled]="true"/>
+                                                </div>
+
+                                                <div class="form-group"> 
+                                                    <label for="AccountCurrency"><span class="req">* </span> Currency </label>
+                                                    <input required type="text"  formControlName="accountCurrency" name="accountCurrency" id="accountCurrency" [attr.disabled]="true" />
+                                                </div>
+                                    </fieldset>
+                                </div>  
+
+                                <div class="form-group"> 
+                                    <fieldset class="fieldset-border">
+                                        <legend class="legend-border inline">Beneficiary Details  </legend>
+                                                    <div class="form-group"> 
+                                                        <label for="BeneficiaryName"><span class="req">* </span> Name </label>
+                                                        <input required type="text"  formControlName="beneficiaryName" name="beneficiaryName" id="beneficiaryName" [attr.disabled]="true" />
+                                                    </div>
+                                        </fieldset>
+                                    </div> 
+
+                                    <div class="form-group"> 
+                                        <fieldset class="fieldset-border">
+                                            <legend class="legend-border inline">Informative Markers  </legend>
+                                                        <div class="form-group"> 
+                                                            <label for="CustInfoMkr"><span class="req">* </span> Customer Informative marker description </label>
+                                                            <textarea required type="text"  formControlName="custInfoMkr" name="custInfoMkr" id="custInfoMkr" [attr.disabled]="true">
+                                                                 </textarea>
+                                                        </div>
+            
+                                                        <div class="form-group"> 
+                                                            <label for="AccountInfoMkr"><span class="req">* </span> Account Informative marker description </label>
+                                                            <textarea required type="text"  formControlName="accountInfoMkr" name="accountInfoMkr" id="accountInfoMkr" [attr.disabled]="true">
+                                                            </textarea>
+                                                        </div>
+        
+                                                        
+                                            </fieldset>
+                                        </div> 
+
+                                <div class="form-group"> 
+                                    <fieldset class="fieldset-border">
+                                        <legend class="legend-border inline">Call back Info  </legend>
+                                                    <div class="form-group"> 
+                                                        <label for="Outcome"><span class="req">* </span>Outcome </label>
+                                                        <!-- <select required type="number"  formControlName="outcome" name="outcome" id="outcome"
+                                                             maxlength="12" /> -->
+                                                             <select name="outcome" id="outcome" required>
+                                                                <option value="0" default></option>
+                                                                <option value="1">Successful</option>
+                                                                <option value="2">Cannot Reach Customer (On Hold)</option>
+                                                                <option value="3">Cannot Reach Customer (Discrepancy)</option>
+                                                                <option value="4">Reject</option>
+                                                              </select>
+                                                    </div>
+        
+                                                    <div class="form-group"> 
+                                                        <label for="Extension"><span class="req">* </span> Extension </label>
+                                                        <input required type="text"  formControlName="extension" name="extension" id="extension" />
+                                                    </div>
+    
+                                                    <div class="form-group"> 
+                                                        <label for="ContactPerson"><span class="req">* </span> Contact Person </label>
+                                                        <input required type="text"  formControlName="contactPerson" name="contactPerson" id="contactPerson" />
+                                                    </div>
+
+                                                    <div class="form-group"> 
+                                                        <label for="CustomerCalledOn"><span class="req">* </span> Customer called on </label>
+                                                        <input required type="text"  formControlName="customerCalledOn" name="customerCalledOn" id="customerCalledOn" />
+                                                    </div>
+
+                                                    <div class="form-group"> 
+                                                        <legend for="Comment"> Comment </legend>
+                                                        <textarea required type="text"  formControlName="comment" name="comment" id="comment">
+                                                        </textarea>
+                                                    </div>
+                                        </fieldset>
+                                    </div> 
+    
+                           
+        
+                        <!-- <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" formControlName="name">
+                            <span class="text-danger">
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" formControlName="email">
+                            <span class="text-danger">
+                            </span>
+                            <span class="text-danger">
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input type="text" class="form-control" formControlName="username">
+                            <span class="text-danger">
+                            </span>
+                            <span class="text-danger">
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" formControlName="password">
+                            <span class="text-danger">
+                            </span>
+                            <span class="text-danger">
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" formControlName="confirmPassword">
+                            <span class="text-danger">
+                             
+                                Confirm Password is required
+                            </span>
+                            <span class="text-danger">
+                              
+                                Passwords doesnot match
+                            </span>
+                        </div> --> 
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+table {
+    width: 60%
+}
+
+
+div.container {
+    width: 70%;
+    position:absolute;
+    padding: 100px 0px 0px 300px;
+}
+
+span {
+    width: 70%;
+    position: relative;
+    padding: 0px 0px 0px 300px;
+    background: gray;
+    /* float: left */
+}

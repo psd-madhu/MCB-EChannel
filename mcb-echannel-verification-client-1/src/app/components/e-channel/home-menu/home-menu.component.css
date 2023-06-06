@@ -1,0 +1,31 @@
+/* #example_wrapper.dataTables_wrapper {
+    clear: none;
+    position:absolute;
+} */
+
+
+div#example_wrapper {
+    width: 80%;
+    float: right;
+    display: grid;
+    padding: 30px;
+    position:absolute;
+    clear:none;
+}
+
+div#example_wrapper.dataTables_wrapper {
+    clear: none;
+    position:absolute;
+}
+.container {
+    width: 80%;
+    float: right;
+    display: grid;
+    padding: 30px;
+    position:relative;
+    clear:none;
+}
+
+.btn {
+    margin-right: 30px
+}
